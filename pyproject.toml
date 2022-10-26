@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aicoe-hello-world"
+description = "Hello World module of AICoE"
+readme = "README.rst"
+authors = [
+    { name = "Harshad Reddy Nalla", email = "hnalla@redhat.com" }
+]
+license = { text = "GPLv3+" }
+dynamic = [ "version", "dependencies" ]
+
+[tool.setuptools]
+zip-safe = false
+packages = ["aicoe.hello_world"]
+
+[tool.setuptools.dynamic]
+version = {attr = "aicoe.hello_world.__version__"}
+dependencies = { file = ["requirements.txt"] }
